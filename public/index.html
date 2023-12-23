@@ -131,14 +131,49 @@
         <div class="bg-white">
             <img src="./images/wallet.png" alt="wallet">
             <div>Super Plus</div>
+            <div>
+                Sales
+            </div>
+            <span>$24,780</span>
+            <span>+40%</span>
+            <canvas id="chart1"></canvas>
         </div>
         <div class="bg-white">
             <img src="./images/wallet.png" alt="wallet">
             <div>Super Pro</div>
-
+<div>
+                Sales
+            </div>
+            <span>$24,780</span>
+            <span>+40%</span>
+            <canvas id="chart2"></canvas>
 
         </div>
       </div>
     </div>
+    <script>
+        const xValues = ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"];
+const yValues = [0,4,8,12,16,18,20];
+const barColors = ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"];
+ var ctx = document.getElementById('chart1').getContext('2d');
+
+new Chart(ctx, {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Super Plus Sales"
+    }
+  }
+});
+    </script>
   </body>
 </html>
