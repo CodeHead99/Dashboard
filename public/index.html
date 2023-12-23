@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Store</title>
     <link href="./output.css" rel="stylesheet" />
+    <script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
   </head>
   <body class="bg-gray-200">
     <div class="flex">
@@ -152,28 +155,27 @@
       </div>
     </div>
     <script>
-        const xValues = ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"];
-const yValues = [0,4,8,12,16,18,20];
-const barColors = ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"];
- var ctx = document.getElementById('chart1').getContext('2d');
-
-new Chart(ctx, {
-  type: "bar",
-  data: {
-    labels: xValues,
-    datasets: [{
+        const xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+const yValues = [55, 49, 44, 24, 15];
+const barColors = ["red", "green","blue","orange","brown"];
+        const ctx = document.querySelector("#chart1").getContext("2d")
+        var chart1_chart = new Chart(ctx,{
+            type: 'bar',
+            data: {
+                labels: xValues,
+                datasets: [{
       backgroundColor: barColors,
       data: yValues
     }]
-  },
-  options: {
+            },
+            options: {
     legend: {display: false},
     title: {
       display: true,
-      text: "Super Plus Sales"
-    }
-  }
-});
+      text: "World Wine Production 2018"
+    }}
+        })
+        console.log(ctx,chart1_chart)
     </script>
   </body>
 </html>
