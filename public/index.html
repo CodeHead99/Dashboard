@@ -154,10 +154,37 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
             <canvas id="chart2"></canvas>
         </div>
       </div>
+      <div class="m-7 flex card-container space-x-6">
+        <div class="card bg-white w-1/2 p-4">
+            <div>
+            <img src="./images/wallet.png" alt="wallet" class="w-10 h-10"></div>
+            <div class="font-bold text-xl text-gray-700">Super Plus</div>
+            <div class="uppercase text-gray-400 my-3 font-bold text-sm">
+                Sales
+            </div>
+            <span class="font-bold text-3xl">$24,780</span>
+            <span class="bg-green-500 text-white p-1 rounded-full text-sm font-bold align-text-top">+40%</span>
+            <canvas id="chart3"></canvas>
+        </div>
+       <div class="card bg-white w-1/2 p-4">
+            <div>
+            <img src="./images/wallet.png" alt="wallet" class="w-10 h-10"></div>
+            <div class="font-bold text-xl text-gray-700">Super Plus</div>
+            <div class="uppercase text-gray-400 my-3 font-bold text-sm">
+                Sales
+            </div>
+            <span class="font-bold text-3xl">$24,780</span>
+            <span class="bg-red-500 text-white p-1 rounded-full text-sm font-bold align-text-top">-10%</span>
+            <canvas id="chart4"></canvas>
+        </div>
+      </div>
     </div>
     <script>
         const ctx = document.querySelector("#chart1").getContext("2d")
         const ctx1 = document.querySelector("#chart2").getContext("2d")
+        const ctx2 = document.querySelector("#chart3").getContext("2d")
+        const ctx3 = document.querySelector("#chart4").getContext("2d")
+
 
         var chart1_chart = new Chart(ctx,{
             type: 'bar',
@@ -193,20 +220,80 @@ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
                 },
     }
         })
-    var chart1_chart = new Chart(ctx1,{
+    var chart2_chart = new Chart(ctx1,{
             type: 'line',
             data: {
                 labels: ["Jan", "Feb", "Mar", "Apr", "May", "June"],
                 datasets: [{
-    //    backgroundColor: [
-    //             "rgba(255, 99, 132, 1)",
-    //             "rgba(54, 162, 235, 1)",
-    //             "rgba(255, 206, 86, 1)",
-    //             "rgba(75, 192, 192, 1)",
-    //             "rgba(153, 102, 255, 1)",
-    //             "rgba(255, 159, 64, 1)",
-    //           ],
       data: [11, 22, 13, 74, 105, 6],
+      borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(255, 159, 64, 1)",
+              ],
+      borderWidth: 1,
+    }]
+            },
+            options: {
+                scales:{
+                    y:{
+                        beginAtZero: true,  
+                        
+                    }
+                },
+    }
+        })
+    var chart3_chart = new Chart(ctx2,{
+            type: 'doughnut',
+            data: {
+                labels: ["Jan", "Feb", "Mar", "Apr", "May", "June"],
+                datasets: [{
+      data: [1, 2, 3, 4, 5, 6],
+      backgroundColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(255, 159, 64, 1)",
+              ],
+      borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(255, 159, 64, 1)",
+              ],
+      borderWidth: 1,
+    }]
+            },
+            options: {
+                scales:{
+                    y:{
+                        beginAtZero: true,  
+                        
+                    }
+                },
+    }
+        })
+        var chart4_chart = new Chart(ctx3,{
+            type: 'radar',
+            data: {
+                labels: ["Jan", "Feb", "Mar", "Apr", "May", "June"],
+                datasets: [{
+      data: [1, 2, 3, 4, 5, 6],
+      backgroundColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(255, 159, 64, 1)",
+              ],
       borderColor: [
                 "rgba(255, 99, 132, 1)",
                 "rgba(54, 162, 235, 1)",
